@@ -29,4 +29,4 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 
 
 def calcular_latas_e_preco_de_tinta():
-    """Escreva aqui em baixo a sua solução"""
+   area_a_ser_pintada = float(input('Area a ser pintada: '))
