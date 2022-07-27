@@ -29,5 +29,35 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 
 
 def calcular_latas_e_preco_de_tinta():
-   area_a_ser_pintada = float(input('Area a ser pintada: '))
-   
+    from math import ceil, floor
+    VALOR_LATA = 80
+    VALOR_GALAO = 25
+
+    area_a_ser_pintada = float(input('Area a ser pintada: '))
+    litros_tinta_pintura = area_a_ser_pintada / 6
+    litros_de_tinta_a_ser_usado = ceil((litros_tinta_pintura) + ((litros_tinta_pintura) * 10/100))
+    print(f'Você deve comprar {litros_de_tinta_a_ser_usado} litros de tinta.')
+
+    # Usando Latas
+    latas_de_tinta = ceil(litros_de_tinta_a_ser_usado / 18)
+    valor_latas_tinta = latas_de_tinta * VALOR_LATA
+    litros_a_sobrar_lata = (latas_de_tinta * 18) - litros_de_tinta_a_ser_usado
+    print(f'Você pode comprar {latas_de_tinta} lata(s) de 18 litros a um custo de R$ {valor_latas_tinta}. Vão sobrar {litros_a_sobrar_lata:.1f} litro(s) de tinta.')
+
+    # Usando Galões
+    galoes_de_tinta = ceil(litros_de_tinta_a_ser_usado / 3.6)
+    valor_galoes_tinta = galoes_de_tinta * VALOR_GALAO
+    litros_a_sobrar_galao = (galoes_de_tinta * 3.6) - litros_de_tinta_a_ser_usado
+    print(f'Você pode comprar {galoes_de_tinta} lata(s) de 3.6 litros a um custo de R$ {valor_galoes_tinta}. Vão sobrar {litros_a_sobrar_galao:.1f} litro(s) de tinta.')
+
+    # Usando Latas e Galões para melhorar os gastos
+    latas_de_tinta = floor(litros_de_tinta_a_ser_usado)//18
+    litros_faltantes = litros_de_tinta_a_ser_usado - (latas_de_tinta * 18)
+    galoes_de_tinta = ceil(litros_faltantes / 3.6)
+    valor_latas_tinta = latas_de_tinta * VALOR_LATA
+    valor_galoes_tinta = galoes_de_tinta * VALOR_GALAO
+    valor_total_tintas = valor_latas_tinta + valor_galoes_tinta
+    sobra_tinta = 3.6 - litros_faltantes
+    print(f'Para menor custo, você pode comprar {latas_de_tinta} lata(s) de 18 litros e {galoes_de_tinta} galão(ões) de 3.6 litros a um custo de R$ {valor_total_tintas}. Vão sobrar {sobra_tinta} litro(s) de tinta.')
+
+    
