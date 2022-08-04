@@ -15,5 +15,12 @@ Faça um Programa que verifique se uma letra digitada é vogal ou consoante.
 """
 
 
+
 def vogal_ou_consoante(letra):
-    """Escreva aqui em baixo a sua solução"""
+    VOGAL = ('A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u')
+    l = letra
+    if l.isalpha:
+        if l in VOGAL:
+            return('vogal')
+        return('consoante')
+    
