@@ -42,7 +42,14 @@ python -m doctest -f <nome_do_pacote>/<nome_do_script>
 Basta substituir o <nome_do_pacote> pelo nome do pacote e <nome_do_script> pelo nome do escript.
 Exemplo para rodar os testes do primeiro exercício:
 
-```
+```from math import ceil
+
+velocidade_do_link = float(input('Digite a velocidade da conexão: '))
+tamanho_do_arquivo = float(input('digite o tamanho do arquivo: '))
+tempo_download_segundos= tamanho_do_arquivo/(velocidade_do_link /8)
+tempo_minutos = round(tempo_download_segundos / 60)
+print(tempo_download_segundos)
+print(f'O tempo aproximado do Download é: {tempo_minutos} minuto(s)')
 python -m doctest -f secao_01_estrutura_sequencial/ex_01_alo_mundo.py 
 ```
 
