@@ -1,8 +1,8 @@
 """
-Exercício 25 da seção de estrutura de decisão da Python Brasil:
-https://wiki.python.org.br/EstruturaDeDecisao
+Exercício 14 da seção de listas da Python Brasil:
+https://wiki.python.org.br/ExerciciosListas
 
-Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+Utilizando listas faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
 
   "Telefonou para a vítima?"
   "Esteve no local do crime?"
@@ -31,5 +31,5 @@ Caso contrário, ele será classificado como "Inocente".
 """
 
 
-def investigar(telefonou: str, estava_no_local: str, mora_perto: str, devia: str, trabalhou: str, ):
+def investigar(*respostas):
     """Escreva aqui em baixo a sua solução"""
