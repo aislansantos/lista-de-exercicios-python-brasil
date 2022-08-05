@@ -16,7 +16,15 @@ Mostrar o resultado com duas casas decimais
     Melhor produto custa R$ 1.00
 
 """
-ex_01_imprimir_maior_numero.py
 
 def decidir_melhor_produto(x, y, z):
-    """Escreva aqui em baixo a sua solução"""
+    p1 = x
+    p2 = y
+    p3 = z
+
+    if p1 < p2 and p1 < p3:
+        print(f'Melhor produto custa R$ {p1:.2f}')
+    if p2 < p1 and p2 < p3:
+        print(f'Melhor produto custa R$ {p2:.2f}')
+    if p3 < p1 and p3 < p2:
+        print(f'Melhor produto custa R$ {p3:.2f}')
