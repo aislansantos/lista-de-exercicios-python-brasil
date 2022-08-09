@@ -52,4 +52,56 @@ até R$ 99999,99
 
 
 def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
-    """Escreva aqui em baixo a sua solução"""
+    valor_hora = valor_hora
+    horas_trabalhadas = horas_trabalhadas
+
+    salario_bruto = (valor_hora * horas_trabalhadas)
+    salario_bruto = float(salario_bruto)
+    inss = (salario_bruto * 10) / 100
+    sindicato = (salario_bruto * 3) / 100
+    fgts = (salario_bruto * 11) / 100
+    descontos_parciais = inss + sindicato
+    if salario_bruto <= 900:
+        ir = 0
+        descontos_totais = descontos_parciais + ir
+        salario_liquido = salario_bruto - descontos_totais
+        print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})     : R$ {salario_bruto:>8.2f}')
+        print(f'(-) IR (0%)                        : R$ {ir:>8.2f}')
+        print(f'(-) INSS (10%)                     : R$ {inss:>8.2f}')
+        print(f'(-) Sindicato (3%)                 : R$ {sindicato:>8.2f}')
+        print(f'FGTS (11%)                         : R$ {fgts:>8.2f}')
+        print(f'Total de descontos                 : R$ {descontos_totais:>8.2f}')
+        print(f'Salário Liquido                    : R$ {salario_liquido:>8.2f}')
+    if salario_bruto > 900 and salario_bruto <= 1500:
+        ir = (salario_bruto * 5) / 100
+        descontos_totais = descontos_parciais + ir
+        salario_liquido = salario_bruto - descontos_totais
+        print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})     : R$ {salario_bruto:>8.2f}')
+        print(f'(-) IR (5%)                        : R$ {ir:>8.2f}')
+        print(f'(-) INSS (10%)                     : R$ {inss:>8.2f}')
+        print(f'(-) Sindicato (3%)                 : R$ {sindicato:>8.2f}')
+        print(f'FGTS (11%)                         : R$ {fgts:>8.2f}')
+        print(f'Total de descontos                 : R$ {descontos_totais:>8.2f}')
+        print(f'Salário Liquido                    : R$ {salario_liquido:>8.2f}')
+    if salario_bruto > 1500 and salario_bruto <= 2500:
+        ir = (salario_bruto * 10) / 100
+        descontos_totais = descontos_parciais + ir
+        salario_liquido = salario_bruto - descontos_totais
+        print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})    : R$ {salario_bruto:>8.2f}')
+        print(f'(-) IR (10%)                       : R$ {ir:>8.2f}')
+        print(f'(-) INSS (10%)                     : R$ {inss:>8.2f}')
+        print(f'(-) Sindicato (3%)                 : R$ {sindicato:>8.2f}')
+        print(f'FGTS (11%)                         : R$ {fgts:>8.2f}')
+        print(f'Total de descontos                 : R$ {descontos_totais:>8.2f}')
+        print(f'Salário Liquido                    : R$ {salario_liquido:>8.2f}')
+    if salario_bruto > 2500:
+        ir = (salario_bruto * 20) / 100
+        descontos_totais = descontos_parciais + ir
+        salario_liquido = salario_bruto - descontos_totais
+        print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})   : R$ {salario_bruto:>8.2f}')
+        print(f'(-) IR (20%)                       : R$ {ir:>8.2f}')
+        print(f'(-) INSS (10%)                     : R$ {inss:>8.2f}')
+        print(f'(-) Sindicato (3%)                 : R$ {sindicato:>8.2f}')
+        print(f'FGTS (11%)                         : R$ {fgts:>8.2f}')
+        print(f'Total de descontos                 : R$ {descontos_totais:>8.2f}')
+        print(f'Salário Liquido                    : R$ {salario_liquido:>8.2f}')
