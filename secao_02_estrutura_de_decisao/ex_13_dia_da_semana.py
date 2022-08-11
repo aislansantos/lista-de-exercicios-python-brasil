@@ -30,17 +30,17 @@ se digitar outro valor deve aparecer valor inválido.
 def calcular_dia_da_semana(numero: int):
     dia = numero
     semana = {
-        1 : "Domingo",
-        2 : "Segunda",
-        3 : "Terça",
-        4 : "Quarta",
-        5 : "Quinta",
-        6 : "Sexta",
-        7 : "Sábado"
+        1: "Domingo",
+        2: "Segunda",
+        3: "Terça",
+        4: "Quarta",
+        5: "Quinta",
+        6: "Sexta",
+        7: "Sábado"
     }
 
-    for k,v in semana.items():
+    for k, v in semana.items():
         if k == dia:
             return(f'{v}')
-    
+
     return(f'Dia Inválido')
