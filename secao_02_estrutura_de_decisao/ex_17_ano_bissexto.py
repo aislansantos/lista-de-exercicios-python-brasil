@@ -19,4 +19,5 @@ bissexto.
 
 
 def eh_ano_bissexto(ano: int):
-    """Escreva aqui em baixo a sua solução"""
+    ano = ano
+    if (ano % 100)
