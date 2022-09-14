@@ -51,4 +51,57 @@ Observando os termos no plural a colocação do "e", da vírgula entre outros. E
 
 
 def decompor_numero(numero: int):
-    """Escreva aqui em baixo a sua solução"""
+    numeros = list()
+    numero = numero
+    caracteres = len(str(numero))
+    if numero >= 1000:
+        return(f'O número precisa ser menor que 1000')
+
+    if numero < 0:
+        return('O número precisa ser positivo')
+
+    if numero > 0 and caracteres < 2:
+        if numero == 1:
+            return(f'1 = 1 unidade')
+        return(f'{numero} = {numero} unidades')
+
+
+    if caracteres == 2:
+        for x in str(numero):
+            numeros.append(x)
+        if numeros[0] == '1':
+            dezena = 'dezena'
+        else:
+            dezena = 'dezenas'
+        if numeros[1] == '1':
+            unidade = 'unidade'
+        else:
+            unidade = 'unidades'
+        if numeros[1] != '0':
+            return(f'{numero} = {numeros[0]} {dezena} e {numeros[1]} {unidade}')
+        return(f'{numero} = {numeros[0]} {dezena}')
+
+    if caracteres == 3:
+        for x in str(numero):
+            numeros.append(x)
+        if numeros[0] == '1':
+            centena = 'centena'
+        else:
+            centena = 'centenas'
+        if numeros[1] == '1':
+            dezena = 'dezena'
+        else:
+            dezena = 'dezenas'
+        if numeros[2] == '1':
+            unidade = 'unidade'
+        else:
+            unidade = 'unidades'
+        if numeros[0] != '0' and numeros[1] != '0' and numeros[2] != '0':
+            return(f'{numero} = {numeros[0]} {centena}, {numeros[1]} {dezena} e {numeros[2]} {unidade}')
+        if numeros[2] == '0' and numeros[1] == '0':
+            return(f'{numero} = {numeros[0]} {centena}')
+        if numeros[1] != '0' and numeros[2] == '0':
+            return(f'{numero} = {numeros[0]} {centena} e {numeros[1]} {dezena}')
+        if numeros[1] == '0' and numeros[2] != '0':
+            return(f'{numero} = {numeros[0]} {centena} e {numeros[2]} {unidade}')
+
